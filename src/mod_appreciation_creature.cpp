@@ -4,6 +4,7 @@
 #include "CreatureScript.h"
 #include "Player.h"
 #include "ScriptedGossip.h"
+#include "Boost.h"
 
 class AppreciationCreature : public CreatureScript
 {
@@ -106,18 +107,18 @@ public:
                 break;
             }
 
-            SendGossipMenuFor(player, GOSSIP_TEXT_CHOOSE_SPECIALIZATION, creature->GetGUID());
+            SendGossipMenuFor(player, GOSSIP_BOOST_TEXT_CHOOSE_SPECIALIZATION, creature->GetGUID());
         }
         else if (action == GOSSIP_MENU_SPECIALIZATION_1 || action == GOSSIP_MENU_SPECIALIZATION_2 || action == GOSSIP_MENU_SPECIALIZATION_3)
         {
             ClearGossipMenuFor(player);
             AddGossipItemFor(player, GOSSIP_ICON_CHAT, "I'm sure!", GOSSIP_SENDER_MAIN, action + 100);
-            SendGossipMenuFor(player, GOSSIP_TEXT_CONFIRM_SPECIALIZATION, creature->GetGUID());
+            SendGossipMenuFor(player, GOSSIP_BOOST_TEXT_CONFIRM_SPECIALIZATION, creature->GetGUID());
         }
         else if (action == GOSSIP_MENU_SPECIALIZATION_1 + 100 || action == GOSSIP_MENU_SPECIALIZATION_2 + 100 || action == GOSSIP_MENU_SPECIALIZATION_3 + 100)
         {
             CloseGossipMenuFor(player);
-            BoostPlayer(player, action - 300);
+            Boost::BoostPlayer(player, action - 300);
         }
 
         return true;

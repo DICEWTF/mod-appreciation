@@ -199,84 +199,80 @@ uint32 Spells[12][350] =
             49800, 48572, 48447},
 };
 
-class BoostSpells
+void BoostSpells::LearnSpells(Player *player)
 {
-public:
-  static void LearnSpells(Player *player)
+  uint32 playerClass = player->getClass();
+  for (int i = 0; i < 350; i++)
   {
-    uint32 playerClass = player->getClass();
-    for (int i = 0; i < 350; i++)
+    if (Spells[playerClass][i] == 0)
     {
-      if (Spells[playerClass][i] == 0)
-      {
-        break;
-      }
-      player->learnSpell(Spells[playerClass][i], false);
+      break;
     }
+    player->learnSpell(Spells[playerClass][i], false);
+  }
 
-    // Missing spells
-    if (player->getClass() == CLASS_MAGE)
+  // Missing spells
+  if (player->getClass() == CLASS_MAGE)
+  {
+    if (player->GetTeamId() == TEAM_ALLIANCE)
     {
-      if (player->GetTeamId() == TEAM_ALLIANCE)
-      {
-        player->learnSpell(32271, false);
-        player->learnSpell(49359, false);
-        player->learnSpell(3565, false);
-        player->learnSpell(33690, false);
-        player->learnSpell(3562, false);
-        player->learnSpell(3561, false);
-        player->learnSpell(53140, false);
-        player->learnSpell(53142, false);
-        player->learnSpell(10059, false);
-        player->learnSpell(11419, false);
-        player->learnSpell(32266, false);
-        player->learnSpell(11416, false);
-        player->learnSpell(33691, false);
-        player->learnSpell(49360, false);
-      }
-      else
-      {
-        player->learnSpell(3567, false);
-        player->learnSpell(35715, false);
-        player->learnSpell(3566, false);
-        player->learnSpell(49358, false);
-        player->learnSpell(32272, false);
-        player->learnSpell(3563, false);
-        player->learnSpell(53140, false);
-        player->learnSpell(53142, false);
-        player->learnSpell(11417, false);
-        player->learnSpell(35717, false);
-        player->learnSpell(32267, false);
-        player->learnSpell(49361, false);
-        player->learnSpell(11420, false);
-        player->learnSpell(11418, false);
-      }
+      player->learnSpell(32271, false);
+      player->learnSpell(49359, false);
+      player->learnSpell(3565, false);
+      player->learnSpell(33690, false);
+      player->learnSpell(3562, false);
+      player->learnSpell(3561, false);
+      player->learnSpell(53140, false);
+      player->learnSpell(53142, false);
+      player->learnSpell(10059, false);
+      player->learnSpell(11419, false);
+      player->learnSpell(32266, false);
+      player->learnSpell(11416, false);
+      player->learnSpell(33691, false);
+      player->learnSpell(49360, false);
     }
-    else if (player->getClass() == CLASS_SHAMAN)
+    else
     {
-      if (player->GetTeamId() == TEAM_ALLIANCE)
-      {
-        player->learnSpell(32182, false);
-      }
-      else
-      {
-        player->learnSpell(2825, false);
-      }
-    }
-    else if (player->getClass() == CLASS_PALADIN)
-    {
-      if (player->GetTeamId() == TEAM_ALLIANCE)
-      {
-        player->learnSpell(31801, false);
-        player->learnSpell(13819, false);
-        player->learnSpell(23214, false);
-      }
-      else
-      {
-        player->learnSpell(53736, false);
-        player->learnSpell(34769, false);
-        player->learnSpell(34767, false);
-      }
+      player->learnSpell(3567, false);
+      player->learnSpell(35715, false);
+      player->learnSpell(3566, false);
+      player->learnSpell(49358, false);
+      player->learnSpell(32272, false);
+      player->learnSpell(3563, false);
+      player->learnSpell(53140, false);
+      player->learnSpell(53142, false);
+      player->learnSpell(11417, false);
+      player->learnSpell(35717, false);
+      player->learnSpell(32267, false);
+      player->learnSpell(49361, false);
+      player->learnSpell(11420, false);
+      player->learnSpell(11418, false);
     }
   }
-};
+  else if (player->getClass() == CLASS_SHAMAN)
+  {
+    if (player->GetTeamId() == TEAM_ALLIANCE)
+    {
+      player->learnSpell(32182, false);
+    }
+    else
+    {
+      player->learnSpell(2825, false);
+    }
+  }
+  else if (player->getClass() == CLASS_PALADIN)
+  {
+    if (player->GetTeamId() == TEAM_ALLIANCE)
+    {
+      player->learnSpell(31801, false);
+      player->learnSpell(13819, false);
+      player->learnSpell(23214, false);
+    }
+    else
+    {
+      player->learnSpell(53736, false);
+      player->learnSpell(34769, false);
+      player->learnSpell(34767, false);
+    }
+  }
+}
