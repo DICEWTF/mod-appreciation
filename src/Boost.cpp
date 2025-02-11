@@ -207,7 +207,7 @@ void Boost::Teleport(Player *player)
     return;
   }
 
-  // TODO player->TeleportTo(571, 5812.77, 633.11, 648, 2.46);
+  player->TeleportTo(571, 5807.786, 588.1629, 660.94, 1.66594);
 }
 
 // TODO: reputation

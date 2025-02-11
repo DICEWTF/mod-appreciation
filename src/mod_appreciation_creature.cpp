@@ -31,14 +31,14 @@ public:
         }
 
         // Check player is below level
-        if (player->GetLevel() < targetLevel)
+        if (player->GetLevel() > targetLevel)
         {
-            AddGossipItemFor(player, GOSSIP_ICON_CHAT, "I want a character boost", GOSSIP_SENDER_MAIN, GOSSIP_MENU_CHOOSE_SPECIALIZATION);
+            SendGossipMenuFor(player, GOSSIP_BOOST_TEXT_LEVEL_TOO_HIGH, creature->GetGUID());
             return true;
         }
-
-        // Character is over level
-        SendGossipMenuFor(player, GOSSIP_BOOST_TEXT_LEVEL_TOO_HIGH, creature->GetGUID());
+        
+        AddGossipItemFor(player, GOSSIP_ICON_CHAT, "I want a character boost", GOSSIP_SENDER_MAIN, GOSSIP_MENU_CHOOSE_SPECIALIZATION);
+        SendGossipMenuFor(player, GOSSIP_BOOST_TEXT_DEFAULT, creature->GetGUID());
         return true;
     }
 
