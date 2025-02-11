@@ -1,114 +1,76 @@
 [worldserver]
 
-#################################
-#
-# Require certificates to use these feature
-# The item id for the certificate is 20460 and it is bound to the account
-#
+# Allow being boosted to a specific level.
 # Default: 1 (enabled)
-#
+Boost.Enabled = 1
 
-Appreciation.RequireCertificate.Enabled = 1
-
-#################################
-
-#################################
-#
-# Allow being boosted to a specific level and be given a basic set of equipment
-#
-# Default: 1 (enabled)
-#
-
-Appreciation.LevelBoost.Enabled = 1
-
-#################################
-
-#################################
-#
-# The level to give the player when using the level boost feature
+# The level to give the player.
 # Accepted values are 60, 70 and 80
-#
-# Default: 60
-#
+# Default: 80
+Boost.Level = 80
 
-Appreciation.LevelBoost.TargetLevel = 60
-
-#################################
-
-#################################
-#
-# The amount of copper to give the player when using the level boost feature
+# The amount of gold to give.
 # Will be disabled if set to 0
-#
-# Default: 2500000 (250 gold)
-#
+# Default: 5000
+Boost.Gold = 5000
 
-Appreciation.LevelBoost.IncludedCopper = 2500000
+# Give weapons and armors according to Level.
+# Default: 1
+Boost.Equipment = 1
 
-#################################
+# Give weapons and armor proficiencies.
+# Default: 1
+Boost.Proficiencies = 1
 
-#################################
-#
-# Allow unlocking flight paths for all continents
-#
-# Default: 1 (enabled)
-#
+# Give spells.
+# Default: 1
+Boost.Spells = 1
 
-Appreciation.UnlockContinents.Enabled = 1
+# Give the dual spec on boost.
+# Default: 1
+Boost.DualSpec = 1
 
-#################################
+# Give riding skill.
+# Values are:
+# - 0: disabled
+# - 1: apprentice (ground 60%)
+# - 2: journeyman (ground 100%)
+# - 3: expert (fly 150%)
+# - 4: artisan (fly 280/310%)
+# Default: 3
+Boost.Riding = 3
 
-#################################
-#
-# Allow unlocking flight paths for Eastern Kingdoms
-#
-# Default: 1 (enabled)
-#
+# Give cold weather flying to fly in northend.
+# Default: 1
+Boost.ColdFlying = 1
 
-Appreciation.UnlockContinents.EasternKingdoms.Enabled = 1
+# Give basic mounts, set to 0 for none.
+# This is the SPELL id and NOT the ITEM id!!!
+# Defauts:
+# - Horde ground: Timber wolf (580)
+# - Horde fly: Tawny Wind Rider (32243)
+# - Alliance ground: Pinto (472)
+# - Alliance fly: Snowy Gryphon (32240)
+Boost.Mounts.Horde.Ground = 580
+Boost.Mounts.Horde.Fly = 32243
+Boost.Mounts.Alliance.Ground = 472
+Boost.Mounts.Alliance.Fly = 32240
 
-#################################
+# Give flight paths.
+# Default: 1
+Boost.FlightPaths.EasternKingdoms = 1
+Boost.FlightPaths.Kalimdor = 1
+Boost.FlightPaths.Outland = 1
+Boost.FlightPaths.Northend = 1
 
-#################################
-#
-# Allow unlocking flight paths for Kalimdor
-#
-# Default: 1 (enabled)
-#
+# Bind the player heartstone to the endgame city depending on Level.
+# 60: Orgrimmar/Stormwind, 70: Shattrath, 80: Northend
+# Values are 1 (enabled) or 0 (disabled).
+# Default: 1
+Boost.Heartstone = 1
 
-Appreciation.UnlockContinents.Kalimdor.Enabled = 1
+# Teleport the player to the endgame city depending on Level, same as heartstone.
+# Default: 1
+Boost.Teleport = 1
 
-#################################
-
-#################################
-#
-# Allow unlocking flight paths for Outland
-#
-# Default: 1 (enabled)
-#
-
-Appreciation.UnlockContinents.Outland.Enabled = 1
-
-#################################
-
-#################################
-#
-# Allow unlocking flight paths for Northrend
-#
-# Default: 0 (disabled)
-#
-
-Appreciation.UnlockContinents.Northrend.Enabled = 0
-
-#################################
-
-#################################
-#
-# Give the player a certificate of appreciation when reaching max level
-#
-# Default: 0 (disabled)
-#
-
-Appreciation.RewardAtMaxLevel.Enabled = 0
-
-#################################
+# EoF
