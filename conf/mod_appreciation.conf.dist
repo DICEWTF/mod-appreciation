@@ -5,7 +5,11 @@
 Boost.Enabled = 1
 
 # The level to give the player.
-# Accepted values are 60, 70 and 80
+# Accepted values are 60, 70 and 80.
+# !!!! ONLY LEVEL 80 IS FULLY WORKING !!!!
+# !!!! ONLY LEVEL 80 IS FULLY WORKING !!!!
+# !!!! ONLY LEVEL 80 IS FULLY WORKING !!!!
+# !!!! ONLY LEVEL 80 IS FULLY WORKING !!!!
 # Default: 80
 Boost.Level = 80
 
