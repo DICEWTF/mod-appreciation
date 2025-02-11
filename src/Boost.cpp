@@ -195,7 +195,33 @@ void Boost::BindHeartstone(Player *player)
     return;
   }
 
-  // TODO
+  WorldLocation homebinding;
+  if (player->GetTeamId() == TEAM_HORDE)
+  {
+    homebinding = WorldLocation(571, 5888.15, 510.102, 641.57, 4.9057107);
+  }
+  else
+  {
+    homebinding = WorldLocation(571, 5719.0337, 682.09784, 645.7523, 3.2493033);
+  }
+
+  // Bind on server
+  player->SetHomebind(homebinding, 4395);
+
+  // Notify client
+  WorldPacket data(SMSG_BINDPOINTUPDATE, 4 + 4 + 4 + 4 + 4);
+  data << float(homebinding.GetPositionX());
+  data << float(homebinding.GetPositionY());
+  data << float(homebinding.GetPositionZ());
+  data << uint32(homebinding.GetMapId());
+  data << uint32(4395);
+  player->SendDirectMessage(&data);
+
+  // ???
+  data.Initialize(SMSG_PLAYERBOUND, 8 + 4);
+  data << player->GetGUID();
+  data << uint32(4395);
+  player->SendDirectMessage(&data);
 }
 
 void Boost::Teleport(Player *player)
