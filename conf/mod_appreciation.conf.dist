@@ -15,8 +15,8 @@ Boost.Level = 80
 
 # The amount of gold to give.
 # Will be disabled if set to 0
-# Default: 5000
-Boost.Gold = 5000
+# Default: 250
+Boost.Gold = 250
 
 # Give weapons and armors according to Level.
 # Default: 1

@@ -48,7 +48,7 @@ void Boost::GiveLevel(Player *player, uint32 targetLevel)
 
 void Boost::GiveGold(Player *player)
 {
-  uint32 gold = sConfigMgr->GetOption<uint32>("Boost.Gold", 5000);
+  uint32 gold = sConfigMgr->GetOption<uint32>("Boost.Gold", 250);
 
   if (gold <= 0)
   {
