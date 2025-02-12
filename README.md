@@ -18,7 +18,8 @@ The boost:
 
 There is a config file to configure and enable/disable everything.
 
-By default the NPC that provides these services are located in Stormwind City, Orgrimmar. The one in Stormwind City can be found outside the auction house in the Trade District, the one in Orgimmar can be found outside Spiritfury Reagents in the Valley of Strength.
+There is NPCs to boost characters at the end of each small starting zones,
+in Stormwind and in Orgrimmar next to auction houses.
 
 ## Credits
 
