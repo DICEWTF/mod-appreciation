@@ -31,7 +31,7 @@ public:
         }
 
         // Check player is below level
-        if (player->GetLevel() > targetLevel)
+        if (player->GetLevel() >= targetLevel)
         {
             SendGossipMenuFor(player, GOSSIP_BOOST_TEXT_LEVEL_TOO_HIGH, creature->GetGUID());
             return true;

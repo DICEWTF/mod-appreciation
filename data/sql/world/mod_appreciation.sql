@@ -4,17 +4,17 @@ DELETE FROM `npc_text` WHERE `ID` BETWEEN @Entry AND @Entry+4;
 INSERT INTO `npc_text` (`ID`, `text0_0`) VALUES
 (@Entry, 'A character boost to 80 is available for you if you want.'),
 (@Entry+1, 'Sorry, there is no character boost available for now.'),
-(@Entry+2, 'Sorry, you are over the level required to use a character boost.'),
+(@Entry+2, 'Sorry, you cannot use a character boost.'),
 (@Entry+3, 'Which specialization would you like?'),
 (@Entry+4, 'Are you absolutely certain you want to do this? I have to destroy all of your current equipment so make sure you save anything you do not want to lose!');
 
 DELETE FROM `creature_template` WHERE `entry`=@Entry;
 INSERT INTO `creature_template` (`entry`, `name`, `subname`, `IconName`, `minlevel`, `maxlevel`, `faction`, `npcflag`, `unit_class`, `unit_flags`, `type`, `flags_extra`, `ScriptName`) VALUES
-(@Entry, 'Ambert Mendenhall', 'Character Boost', 'Speak', 60, 60, 35, 1, 1, 2, 7, 16777218, 'npc_appreciation');
+(@Entry, 'Spirit Cheater', 'Character Boost', 'Speak', 60, 60, 35, 1, 1, 2, 7, 16777218, 'npc_appreciation');
 
 DELETE FROM `creature_template_model` WHERE `CreatureID`=@Entry;
 INSERT INTO `creature_template_model` (`CreatureID`, `Idx`, `CreatureDisplayID`, `DisplayScale`, `Probability`) VALUES
-(@Entry, 0, 21697, 1, 1);
+(@Entry, 0, 5233, 1, 1);
 
 DELETE FROM `creature` WHERE `id1`=@Entry;
 INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`) VALUES
