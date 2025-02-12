@@ -7,10 +7,12 @@ The boost:
 - Level up the character ;
 - Give gold ;
 - Give equipment equal to what they would get from quests ;
+- Send 4 TBC bags by mail ;
 - Give weapons and armor proficiencies ;
 - Give all spells ;
 - Give dual spec ;
 - Give riding skills ;
+- Give friendly rep with Kirin Tor ;
 - Give a ground mount and a fly mount ;
 - Unlock all flight paths ;
 - Bind the player's heartstone to Dalaran ;
