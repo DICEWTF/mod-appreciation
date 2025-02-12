@@ -29,4 +29,4 @@ INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, 
 (@Entry, 0, -9069.163, -38.800995, 87.884026, 5.793437), -- Northshire (human)
 (@Entry, 0, -6251.5654, 163.01076, 423.62302, 1.8507006), -- Coldridge Valley (gnome/dwarf)
 (@Entry, 1, 10214.945, 690.93414, 1360.4836, 0.54187703), -- Shadowglen (elf)
-(@Entry, 530, -4257.718, -13256.729, 57.671722, 5.077601); -- Ammen Vale (bidule)
+(@Entry, 530, -4257.718, -13256.729, 57.671722, 5.077601); -- Ammen Vale (draenei)
