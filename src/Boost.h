@@ -12,6 +12,7 @@ private:
   static void GiveLevel(Player *player, uint32 targetLevel);
   static void GiveGold(Player *player);
   static void GiveEquipment(Player *player, uint8 specialization, uint32 targetLevel);
+  static void ResetTalents(Player *player);
   static void GiveProficiencies(Player *player);
   static void GiveSpells(Player *player);
   static void GiveDualSpec(Player *player);

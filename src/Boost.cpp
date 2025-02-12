@@ -19,6 +19,7 @@ void Boost::BoostPlayer(Player *player, uint8 specialization)
   Boost::GiveLevel(player, targetLevel);
   Boost::GiveGold(player);
   Boost::GiveEquipment(player, specialization, targetLevel);
+  Boost::ResetTalents(player);
   Boost::GiveProficiencies(player);
   Boost::GiveSpells(player);
   Boost::GiveDualSpec(player);
@@ -61,6 +62,18 @@ void Boost::GiveEquipment(Player *player, uint8 specialization, uint32 targetLev
     return;
   }
   BoostEquipment::EquipPlayer(player, specialization, targetLevel);
+}
+
+void Boost::ResetTalents(Player *player)
+{
+  // Player talents
+  player->resetTalents(true);
+  player->SendTalentsInfoData(false);
+
+  // Client-side popup
+  WorldPacket data(SMSG_TALENTS_INVOLUNTARILY_RESET, 1);
+  data << uint8(0);
+  player->SendMessageToSet(&data, true);
 }
 
 void Boost::GiveProficiencies(Player *player)
