@@ -16,7 +16,7 @@ void Boost::BoostPlayer(Player *player, uint8 specialization)
   }
 
   // Log
-  LOG_INFO("module.appreciation", "Applying character boost on account: #{} and character: {}.", player->GetSession()->GetAccountId(), player->GetGUID().ToString());
+  LOG_INFO("module.appreciation", "Applying boost on character '{}' from account #{}.", player->GetName(), player->GetSession()->GetAccountId());
 
   // Boost
   Boost::GiveLevel(player, targetLevel);
@@ -287,6 +287,3 @@ void Boost::Teleport(Player *player)
 
   player->TeleportTo(571, 5807.786, 588.1629, 660.94, 1.66594);
 }
-
-// TODO: reputation
-// TODO: bags
