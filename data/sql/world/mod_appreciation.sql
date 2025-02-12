@@ -19,7 +19,7 @@ INSERT INTO `creature_template_model` (`CreatureID`, `Idx`, `CreatureDisplayID`,
 DELETE FROM `creature` WHERE `id1`=@Entry;
 INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`) VALUES
 (@Entry, 0, -8801.2, 629.974, 94.2407, 3.06088), -- Stormwind City
-(@Entry, 1, 1674.88, -4424.97, 2.55801, 2.55801), -- Orgrimmar
+(@Entry, 1, 1674.8527, -4423.74, 18.665726, 2.53), -- Orgrimmar
 
 (@Entry, 1, -592.0922, -4530.223, 41.330013, 1.0327661), -- Valley of trials (orc/troll)
 (@Entry, 1, -3085.2869, 67.22118, 78.43654, 4.713962), -- Red cloud mesa (tauren)
