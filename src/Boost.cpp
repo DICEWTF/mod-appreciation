@@ -25,10 +25,10 @@ void Boost::BoostPlayer(Player *player, uint8 specialization)
   Boost::GiveBags(player);
   Boost::ResetTalents(player);
   Boost::GiveProficiencies(player);
-  Boost::GiveSpells(player);
-  Boost::GiveDualSpec(player);
   Boost::GiveRiding(player);
   Boost::GiveMounts(player);
+  Boost::GiveSpells(player);
+  Boost::GiveDualSpec(player);
   Boost::UnlockFlightPaths(player);
   Boost::GiveReputation(player);
   Boost::BindHeartstone(player);

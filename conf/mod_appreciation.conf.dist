@@ -51,13 +51,13 @@ Boost.ColdFlying = 1
 # Give basic mounts, set to 0 for none.
 # This is the SPELL id and NOT the ITEM id!!!
 # Defauts:
-# - Horde ground: Timber wolf (580)
+# - Horde ground: Swift Timber Wolf (23251)
 # - Horde fly: Tawny Wind Rider (32243)
-# - Alliance ground: Pinto (472)
+# - Alliance ground: Swift Brown Steed (23229)
 # - Alliance fly: Snowy Gryphon (32240)
-Boost.Mounts.Horde.Ground = 580
+Boost.Mounts.Horde.Ground = 23251
 Boost.Mounts.Horde.Fly = 32243
-Boost.Mounts.Alliance.Ground = 472
+Boost.Mounts.Alliance.Ground = 23229
 Boost.Mounts.Alliance.Fly = 32240
 
 # Give flight paths.

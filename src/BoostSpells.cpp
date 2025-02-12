@@ -261,6 +261,11 @@ std::vector<std::vector<int>> BoostSpells::GetClassSpells()
       {25780, -1, -1, 2, 16, -1, 0},    // Righteous Fury
       {62124, -1, -1, 2, 16, -1, 0},    // Hand of Reckoning
       {1044, -1, -1, 2, 18, -1, 0},     // Hand of Freedom
+      {5784, -1, -1, 9, 20, 33388, 0},  // MOUNT: Felsteed
+      {13819, 0, 3, 2, 20, 33388, 0},   // MOUNT: Summon Warhorse
+      {13819, 0, 1, 2, 20, 33388, 0},   // MOUNT: Summon Warhorse
+      {13819, 0, 11, 2, 20, 33388, 0},  // MOUNT: Summon Warhorse
+      {34769, 1, 10, 2, 20, 33388, 0},  // MOUNT: Warhorse
       {643, -1, -1, 2, 20, 10290, 0},   // Devotion Aura (Rank 3)
       {879, -1, -1, 2, 20, -1, 0},      // Exorcism (Rank 1)
       {5502, -1, -1, 2, 20, -1, 0},     // Sense Undead
@@ -300,6 +305,12 @@ std::vector<std::vector<int>> BoostSpells::GetClassSpells()
       {3472, -1, -1, 2, 38, 1042, 0},   // Holy Light (Rank 6)
       {10278, -1, -1, 2, 38, 5599, 0},  // Hand of Protection (Rank 3)
       {20166, -1, -1, 2, 38, -1, 0},    // Seal of Wisdom
+      {23161, -1, -1, 9, 40, 33391, 1}, // MOUNT: Dreadsteed
+      {23214, 0, 11, 2, 40, 33391, 1},  // MOUNT: Summon Charger
+      {23214, 0, 3, 2, 40, 33391, 1},   // MOUNT: Summon Charger
+      {23214, 0, 1, 2, 40, 33391, 1},   // MOUNT: Summon Charger
+      {34767, 1, 10, 2, 40, 33391, 1},  // MOUNT: Charger
+      {48778, -1, -1, 6, 60, 33391, 0}, // MOUNT: Acherus Deathcharger
       {1032, -1, -1, 2, 40, 10291, 0},  // Devotion Aura (Rank 5)
       {5589, -1, -1, 2, 40, 5588, 0},   // Hammer of Justice (Rank 3)
       {19895, -1, -1, 2, 40, 19876, 0}, // Shadow Resistance Aura (Rank 2)
