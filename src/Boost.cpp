@@ -15,10 +15,14 @@ void Boost::BoostPlayer(Player *player, uint8 specialization)
     targetLevel = 80;
   }
 
+  // Log
+  LOG_INFO("module.appreciation", "Applying character boost on account: #{} and character: {}.", player->GetSession()->GetAccountId(), player->GetGUID().ToString());
+
   // Boost
   Boost::GiveLevel(player, targetLevel);
   Boost::GiveGold(player);
   Boost::GiveEquipment(player, specialization, targetLevel);
+  Boost::GiveBags(player);
   Boost::ResetTalents(player);
   Boost::GiveProficiencies(player);
   Boost::GiveSpells(player);
@@ -26,6 +30,7 @@ void Boost::BoostPlayer(Player *player, uint8 specialization)
   Boost::GiveRiding(player);
   Boost::GiveMounts(player);
   Boost::UnlockFlightPaths(player);
+  Boost::GiveReputation(player);
   Boost::BindHeartstone(player);
   Boost::Teleport(player);
 }
@@ -62,6 +67,32 @@ void Boost::GiveEquipment(Player *player, uint8 specialization, uint32 targetLev
     return;
   }
   BoostEquipment::EquipPlayer(player, specialization, targetLevel);
+}
+
+void Boost::GiveBags(Player *player)
+{
+  uint32 guid = player->GetGUID().GetCounter();
+
+  CharacterDatabaseTransaction trans = CharacterDatabase.BeginTransaction();
+  MailDraft *mail = new MailDraft("Some bags to help you", "Here are some bags to help you with your character boost.");
+  ItemTemplate const *pProto = sObjectMgr->GetItemTemplate(21843);
+
+  if (pProto)
+  {
+    for (uint8 i = 0; i < 4; ++i)
+    {
+      Item *mailItem = Item::CreateItem(21843, 1);
+      if (mailItem)
+      {
+        mailItem->SaveToDB(trans);
+        mail->AddItem(mailItem);
+      }
+    }
+  }
+
+  mail->SendMailTo(trans, player ? player : MailReceiver(guid), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM), MAIL_CHECK_MASK_RETURNED);
+  delete mail;
+  CharacterDatabase.CommitTransaction(trans);
 }
 
 void Boost::ResetTalents(Player *player)
@@ -196,6 +227,14 @@ void Boost::UnlockFlightPaths(Player *player)
   if (flightNorthend > 0)
   {
     BoostFlightPaths::UnlockFlightPaths(player, BOOST_FLIGHTPATHS_NORTHEND);
+  }
+}
+
+void Boost::GiveReputation(Player *player)
+{
+  if (player->GetReputation(1090) < 3000)
+  {
+    player->SetReputation(1090, 3000);
   }
 }
 

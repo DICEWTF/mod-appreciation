@@ -12,6 +12,7 @@ private:
   static void GiveLevel(Player *player, uint32 targetLevel);
   static void GiveGold(Player *player);
   static void GiveEquipment(Player *player, uint8 specialization, uint32 targetLevel);
+  static void GiveBags(Player *player);
   static void ResetTalents(Player *player);
   static void GiveProficiencies(Player *player);
   static void GiveSpells(Player *player);
@@ -19,6 +20,7 @@ private:
   static void GiveRiding(Player *player);
   static void GiveMounts(Player *player);
   static void UnlockFlightPaths(Player *player);
+  static void GiveReputation(Player *player);
   static void BindHeartstone(Player *player);
   static void Teleport(Player *player);
 };
