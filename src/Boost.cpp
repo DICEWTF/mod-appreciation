@@ -176,9 +176,9 @@ void Boost::GiveRiding(Player *player)
 
 void Boost::GiveMounts(Player *player)
 {
-  uint32 mountHordeGround = sConfigMgr->GetOption<uint32>("Boost.Mounts.Horde.Ground", 580);
+  uint32 mountHordeGround = sConfigMgr->GetOption<uint32>("Boost.Mounts.Horde.Ground", 23251);
   uint32 mountHordeFly = sConfigMgr->GetOption<uint32>("Boost.Mounts.Horde.Fly", 32243);
-  uint32 mountAllianceGround = sConfigMgr->GetOption<uint32>("Boost.Mounts.Alliance.Ground", 472);
+  uint32 mountAllianceGround = sConfigMgr->GetOption<uint32>("Boost.Mounts.Alliance.Ground", 23229);
   uint32 mountAllianceFly = sConfigMgr->GetOption<uint32>("Boost.Mounts.Alliance.Fly", 32240);
 
   if (player->GetTeamId() == TEAM_HORDE)
